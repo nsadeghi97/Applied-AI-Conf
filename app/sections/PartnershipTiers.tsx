@@ -11,7 +11,7 @@ export default function PartnershipTiers() {
             Partnership opportunities
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300 sm:text-xl lg:text-2xl">
-            Position your brand in front of 700+ Europe's leading AI founders, engineers, and decision-makers.
+            Position your brand in front of 700+ Europe&apos;s leading AI founders, engineers, and decision-makers.
           </p>
         </div>
 

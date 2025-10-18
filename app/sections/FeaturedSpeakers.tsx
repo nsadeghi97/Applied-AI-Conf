@@ -1,6 +1,5 @@
 'use client'
 
-/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
