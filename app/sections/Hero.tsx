@@ -1,25 +1,19 @@
 import { CONFERENCE_INFO } from '@/data/conference';
 import { PARTNERSHIP_OVERVIEW } from '@/data/partnerships';
-import { SplineScene } from '@/components';
+import { FlowField } from '@/components/ui/flow-field';
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center px-4 pb-24 pt-32 sm:px-6 lg:px-8">
-      {/* Background Spline Scene - Neural Network */}
-      <div className="absolute inset-0 z-0 opacity-70">
-        <SplineScene
-          scene="https://prod.spline.design/KRNIQmlKyZ6SYYoF/scene.splinecode"
-          className="w-full h-full scale-150"
-        />
+      {/* Background Flow Field */}
+      <div className="absolute inset-0 z-0">
+        <FlowField className="w-full h-full" />
       </div>
       
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
-        <p className="mb-3 text-sm uppercase tracking-[0.4em] text-gray-300">
-          {CONFERENCE_INFO.title}
-        </p>
         <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          {CONFERENCE_INFO.tagline}
+          {CONFERENCE_INFO.title}
         </h1>
         <p className="mb-6 text-xl text-gray-300 sm:text-2xl">
           {CONFERENCE_INFO.location}

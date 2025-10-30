@@ -2,7 +2,7 @@ import type { NavigationAction, NavigationLink } from '@/types';
 
 export const NAVIGATION_LINKS = [
   { label: 'Overview', href: '#overview' },
-  { label: 'Partnership', href: '#tiers' },
+  { label: 'Partners', href: '/partners' },
   { label: 'FAQ', href: '#faq' },
 ] satisfies NavigationLink[];
 

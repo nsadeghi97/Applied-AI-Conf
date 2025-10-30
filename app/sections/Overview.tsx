@@ -18,13 +18,14 @@ function TypingHeading({ text }: { text: string }) {
       { threshold: 0.3 }
     );
 
-    if (headingRef.current) {
-      observer.observe(headingRef.current);
+    const currentRef = headingRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (headingRef.current) {
-        observer.unobserve(headingRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [isVisible]);
@@ -90,10 +91,10 @@ export default function Overview() {
         {/* Header */}
         <div className="mb-16 text-center lg:mb-24">
           <h2 className="text-5xl font-light tracking-tight text-white sm:text-6xl lg:text-7xl min-h-[1.2em]">
-            <TypingHeading text="Applied AI in Europe" />
+            <TypingHeading text="Applied AI" />
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300 sm:text-xl lg:text-2xl">
-            A one-day technical gathering for a curated mix of builders, product owners, and partners shaping applied AI across Europe
+            The first edition of aico.nf - a one-day technical gathering for a curated mix of builders, product owners, and partners shaping applied AI
           </p>
         </div>
 

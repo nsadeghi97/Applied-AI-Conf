@@ -21,7 +21,7 @@ const FAQ_ITEMS = [
   {
     question: 'How do I become a partner or sponsor?',
     answer:
-      'Share a bit about your goals via the partnership intake form. Our team will follow up with opportunities tailored to the audience segments you want to reach.',
+      'Share a bit about your goals via the partners intake form. Our team will follow up with opportunities tailored to the audience segments you want to reach.',
   },
 ];
 
@@ -42,13 +42,14 @@ export default function FAQ() {
       { threshold: 0.3 }
     );
 
-    if (headingRef.current) {
-      observer.observe(headingRef.current);
+    const currentRef = headingRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (headingRef.current) {
-        observer.unobserve(headingRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [isVisible]);

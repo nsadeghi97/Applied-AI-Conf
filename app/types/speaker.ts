@@ -5,6 +5,7 @@ export interface Speaker {
   bio: string;
   initial: string;
   accent: string;
+  image?: string;
   socials?: {
     label: string;
     url: string;

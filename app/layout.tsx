@@ -9,8 +9,8 @@ const kodeMono = Kode_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Applied AI Conference 2025",
-  description: "Join us October 22, 2025 at The Midway, SF and Online",
+  title: "aico.nf - Applied AI",
+  description: "First edition - May 28, 2026 at Delta Campus, Berlin",
 };
 
 export default function RootLayout({

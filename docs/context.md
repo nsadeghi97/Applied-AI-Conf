@@ -1,15 +1,15 @@
-# Applied AI Conference - Codebase Context
+# aico.nf - Codebase Context
 
 ## Overview
 
-Next.js 15 conference website for "Applied AI in Europe" - a one-day technical conference scheduled for Summer 2026 in Berlin. Built with React 19, TypeScript, Tailwind CSS v4, and Spline 3D graphics.
+Next.js 15 conference website for "aico.nf" - an event series, with the first edition focused on Applied AI. Scheduled for May 28, 2026 at Delta Campus in Berlin. Built with React 19, TypeScript, Tailwind CSS v4, and WebGL shader graphics.
 
 ## Architecture
 
 **Framework:** Next.js 15.5.6 with App Router
 **Language:** TypeScript (strict mode)
 **Styling:** Tailwind CSS v4 with PostCSS
-**3D Graphics:** Spline via @splinetool/react-spline
+**Graphics:** WebGL flow field shader (custom implementation)
 **Font:** Kode Mono (Google Fonts)
 **Build:** Standalone output mode
 
@@ -18,7 +18,7 @@ Next.js 15 conference website for "Applied AI in Europe" - a one-day technical c
 ```
 app/
 ├── components/          # Reusable UI components
-│   ├── ui/            # Low-level UI primitives (Spline wrapper)
+│   ├── ui/            # Low-level UI primitives (FlowField shader)
 │   ├── Navigation.tsx # Fixed header navigation
 │   ├── Footer.tsx     # Site footer
 │   └── index.ts       # Component exports
@@ -51,7 +51,7 @@ Data lives in `app/data/` as typed constants, imported into components/sections.
 ### Component Organization
 
 - **Sections** (`app/sections/`): Full-page sections with business logic (Hero, Overview, PartnershipTiers, FAQ)
-- **Components** (`app/components/`): Reusable UI elements (Navigation, Footer, Spline wrapper)
+- **Components** (`app/components/`): Reusable UI elements (Navigation, Footer, FlowField shader)
 - **Main Page** (`app/page.tsx`): Composes sections in order
 
 ### Styling Approach
@@ -66,7 +66,7 @@ Data lives in `app/data/` as typed constants, imported into components/sections.
 
 **Typing Animation:** Used in Overview and PartnershipTiers sections. Components reveal text character-by-character when scrolled into view, then loop with delete animation. Uses IntersectionObserver for scroll detection.
 
-**Spline Integration:** Hero section includes 3D neural network visualization via Spline. Lazy-loaded with Suspense fallback.
+**Flow Field Shader:** Hero section uses lightweight WebGL flow field animation. Custom shader implementation provides smooth, performant background effect without external dependencies.
 
 **FAQ Accordion:** Client-side state manages open/close. First item open by default.
 
@@ -87,7 +87,7 @@ Conference data split by domain:
 
 **Active Sections:**
 
-- Hero (with Spline background, newsletter form)
+- Hero (with WebGL flow field background, newsletter form)
 - Overview (typing heading, focus areas, attendees)
 - PartnershipTiers (typing heading, tier cards, stats, CTA)
 - FAQ (typing heading, accordion)
@@ -115,8 +115,15 @@ Conference data split by domain:
 ## Technical Notes
 
 - Next.js configured for standalone output (Docker-friendly)
-- Spline scenes loaded from remote URLs (prod.spline.design)
+- Flow field shader uses pure WebGL - no external graphics dependencies
 - Newsletter form in Hero is currently non-functional (needs backend integration)
 - All sections use consistent gradient overlay backgrounds
 - Smooth scroll behavior enabled globally
 - Font loading optimized via next/font
+
+## Branding
+
+- Event series name: "aico.nf"
+- First edition focus: "Applied AI"
+- Location: Delta Campus, Berlin
+- Date: May 28, 2026

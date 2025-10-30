@@ -19,13 +19,14 @@ function TypingHeading({ text }: { text: string }) {
       { threshold: 0.3 }
     );
 
-    if (headingRef.current) {
-      observer.observe(headingRef.current);
+    const currentRef = headingRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (headingRef.current) {
-        observer.unobserve(headingRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [isVisible]);
@@ -91,7 +92,7 @@ export default function PartnershipTiers() {
         {/* Header */}
         <div className="mb-16 text-center lg:mb-24">
           <h2 className="text-5xl font-light tracking-tight text-white sm:text-6xl lg:text-7xl min-h-[1.2em]">
-            <TypingHeading text="Partnership opportunities" />
+            <TypingHeading text="Partners" />
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300 sm:text-xl lg:text-2xl">
             Position your brand in front of 500+ Europe&apos;s leading AI founders, engineers, and decision-makers.
@@ -176,7 +177,7 @@ export default function PartnershipTiers() {
             >
               <span className="absolute inset-0 h-full w-full bg-gradient-to-r from-black via-zinc-900 to-zinc-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
               <span className="relative flex items-center gap-3">
-                Get Partnership Info
+                Get Partners Info
                 <span aria-hidden className="text-xl transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>
             </Link>

@@ -1,7 +1,7 @@
 import type { FooterLink } from '@/types';
 
 export const FOOTER_LINKS = [
-  { label: 'Partnership Deck', href: '#tiers' },
+  { label: 'Partners Deck', href: '/partners' },
   { label: 'Audience Snapshot', href: '#audience' },
   { label: 'Privacy Policy', href: '#' },
   { label: 'Event Guidelines', href: '#' },
