@@ -1,14 +1,12 @@
 import { CONFERENCE_INFO } from '@/data/conference';
 import { PARTNERSHIP_OVERVIEW } from '@/data/partnerships';
-import { FlowField } from '@/components/ui/flow-field';
+import { ShaderWaveBackground } from '@/components/ui/shader-wave-background';
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center px-4 pb-24 pt-32 sm:px-6 lg:px-8">
-      {/* Background Flow Field */}
-      <div className="absolute inset-0 z-0">
-        <FlowField className="w-full h-full" />
-      </div>
+      {/* Background Shader Wave */}
+      <ShaderWaveBackground />
       
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">

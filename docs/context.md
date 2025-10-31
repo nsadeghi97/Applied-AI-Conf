@@ -2,14 +2,14 @@
 
 ## Overview
 
-Next.js 15 conference website for "aico.nf" - an event series, with the first edition focused on Applied AI. Scheduled for May 28, 2026 at Delta Campus in Berlin. Built with React 19, TypeScript, Tailwind CSS v4, and WebGL shader graphics.
+Next.js 15 conference website for "aico.nf" - an event series, with the first edition focused on Applied AI. Scheduled for May 28, 2026 at Delta Campus in Berlin. Built with React 19, TypeScript, Tailwind CSS v4, and React Three Fiber shader graphics.
 
 ## Architecture
 
 **Framework:** Next.js 15.5.6 with App Router
 **Language:** TypeScript (strict mode)
 **Styling:** Tailwind CSS v4 with PostCSS
-**Graphics:** WebGL flow field shader (custom implementation)
+**Graphics:** React Three Fiber with Three.js for shader-based backgrounds
 **Font:** Kode Mono (Google Fonts)
 **Build:** Standalone output mode
 
@@ -18,10 +18,12 @@ Next.js 15 conference website for "aico.nf" - an event series, with the first ed
 ```
 app/
 ├── components/          # Reusable UI components
-│   ├── ui/            # Low-level UI primitives (FlowField shader)
+│   ├── ui/            # Low-level UI primitives (shader backgrounds, button, label, slider)
 │   ├── Navigation.tsx # Fixed header navigation
 │   ├── Footer.tsx     # Site footer
 │   └── index.ts       # Component exports
+├── lib/                # Utility functions
+│   └── utils.ts       # Shared utilities (cn for className merging)
 ├── sections/          # Page sections (Hero, Overview, FAQ, etc.)
 │   └── index.ts       # Section exports
 ├── data/              # Static data configuration
@@ -51,7 +53,7 @@ Data lives in `app/data/` as typed constants, imported into components/sections.
 ### Component Organization
 
 - **Sections** (`app/sections/`): Full-page sections with business logic (Hero, Overview, PartnershipTiers, FAQ)
-- **Components** (`app/components/`): Reusable UI elements (Navigation, Footer, FlowField shader)
+- **Components** (`app/components/`): Reusable UI elements (Navigation, Footer, shader backgrounds, UI primitives)
 - **Main Page** (`app/page.tsx`): Composes sections in order
 
 ### Styling Approach
@@ -66,7 +68,7 @@ Data lives in `app/data/` as typed constants, imported into components/sections.
 
 **Typing Animation:** Used in Overview and PartnershipTiers sections. Components reveal text character-by-character when scrolled into view, then loop with delete animation. Uses IntersectionObserver for scroll detection.
 
-**Flow Field Shader:** Hero section uses lightweight WebGL flow field animation. Custom shader implementation provides smooth, performant background effect without external dependencies.
+**Shader Backgrounds:** Hero section uses React Three Fiber with Three.js for shader-based animated backgrounds. ShaderWaveBackground component provides interactive wave tunnel effect with configurable controls.
 
 **FAQ Accordion:** Client-side state manages open/close. First item open by default.
 
@@ -87,7 +89,7 @@ Conference data split by domain:
 
 **Active Sections:**
 
-- Hero (with WebGL flow field background, newsletter form)
+- Hero (with React Three Fiber shader wave background, newsletter form)
 - Overview (typing heading, focus areas, attendees)
 - PartnershipTiers (typing heading, tier cards, stats, CTA)
 - FAQ (typing heading, accordion)
@@ -115,7 +117,8 @@ Conference data split by domain:
 ## Technical Notes
 
 - Next.js configured for standalone output (Docker-friendly)
-- Flow field shader uses pure WebGL - no external graphics dependencies
+- Graphics stack uses React Three Fiber (@react-three/fiber) with Three.js for shader rendering
+- UI component utilities use clsx and tailwind-merge for className management
 - Newsletter form in Hero is currently non-functional (needs backend integration)
 - All sections use consistent gradient overlay backgrounds
 - Smooth scroll behavior enabled globally
