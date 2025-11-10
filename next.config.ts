@@ -1,13 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
   images: {
     unoptimized: false,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'prod.spline.design',
+        protocol: "https",
+        hostname: "prod.spline.design",
       },
     ],
   },

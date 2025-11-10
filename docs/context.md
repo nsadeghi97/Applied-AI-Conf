@@ -11,7 +11,6 @@ Next.js 15 conference website for "Applied AI Conf by Tech Europe" - an event se
 **Styling:** Tailwind CSS v4 with PostCSS
 **Graphics:** React Three Fiber with Three.js for shader-based backgrounds
 **Font:** Kode Mono (Google Fonts)
-**Build:** Standalone output mode
 
 ## File Structure
 
@@ -90,13 +89,10 @@ Conference data split by domain:
 **Active Sections:**
 
 - Hero (with React Three Fiber fluid wave shader background, newsletter form)
+- FeaturedSpeakers (speaker cards with images from public/speakers/)
 - Overview (typing heading, focus areas, attendees)
 - PartnershipTiers (typing heading, tier cards, stats, CTA)
 - FAQ (typing heading, accordion)
-
-**Commented Out:**
-
-- FeaturedSpeakers section (exists but not rendered)
 
 **Todo Items** (from `todo.md`):
 
@@ -116,7 +112,7 @@ Conference data split by domain:
 
 ## Technical Notes
 
-- Next.js configured for standalone output (Docker-friendly)
+- Image optimization enabled with `sharp` package required for production (speaker images optimized via Next.js Image component)
 - Graphics stack uses React Three Fiber (@react-three/fiber) with Three.js for shader rendering
 - UI component utilities use clsx and tailwind-merge for className management
 - Newsletter form in Hero is currently non-functional (needs backend integration)
