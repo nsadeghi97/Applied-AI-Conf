@@ -1,8 +1,8 @@
-# Applied AI Conf by Tech Europe - Codebase Context
+# Applied AI Conf by { Tech Europe } - Codebase Context
 
 ## Overview
 
-Next.js 15 conference website for "Applied AI Conf by Tech Europe" - an event series, with the first edition focused on Applied AI. Scheduled for May 28, 2026 at Delta Campus in Berlin. Built with React 19, TypeScript, Tailwind CSS v4, and React Three Fiber shader graphics.
+Next.js 15 conference website for "Applied AI Conf by { Tech Europe }" - an event series, with the first edition focused on Applied AI. Scheduled for May 28, 2026 at Delta Campus in Berlin. Built with React 19, TypeScript, Tailwind CSS v4, and React Three Fiber shader graphics.
 
 ## Architecture
 
@@ -122,7 +122,7 @@ Conference data split by domain:
 
 ## Branding
 
-- Event series name: "Applied AI Conf by Tech Europe"
+- Event series name: "Applied AI Conf by { Tech Europe }"
 - First edition focus: "Applied AI"
 - Location: Delta Campus, Berlin
 - Date: May 28, 2026
